@@ -12,6 +12,14 @@
     font-size: 20px;
 }
 
-.your-ticket p {
+#your-ticket p {
     font-weight: bold;
 }    
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}

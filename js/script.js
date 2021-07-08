@@ -52,6 +52,9 @@ var generateButton = document.getElementById("generate-button");
 var resetButton = document.getElementById("reset-button");
 
 // sezione il tuo biglietto
+
+var yourSection = document.getElementById("your-ticket");
+
 var namePassegner = document.getElementById("name");
 var rateHtml = document.getElementById("rate");
 var car = document.getElementById("car");
@@ -106,16 +109,27 @@ generateButton.addEventListener("click", function () {
     rateHtml.innerHTML = rate;
     car.innerHTML = carNumber;
 
-    // Resetto al click la sezione "Inserisci i tuoi dati di viaggio" 
+    // rendo invisibile sezione il tuo biglietto
 
-    /*  namePassegnerElement.value = "";
-     kmsElement.value = "10";
-     ageElement.value = "Over 18"; */
+
+    yourSection.classList.remove("hidden");
+    yourSection.classList.add("visible");
+
 })
 
 // -----chiuso bottone "genera biglietto"----------
 // creo bottone resetta
 
+resetButton.addEventListener("click", function () {
+
+    namePassegnerElement.value = "";
+    kmsElement.value = "10";
+    ageElement.value = "Over 18";
+
+    yourSection.classList.remove("visible");
+    yourSection.classList.add("hidden");
+
+})
 
 
 
