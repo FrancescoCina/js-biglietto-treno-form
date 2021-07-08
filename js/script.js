@@ -59,6 +59,7 @@ var trainCode = document.getElementById("train-code");
 var ticketPrice = document.getElementById("ticket-price");
 
 
+
 // Creazione button al click di generazione ticket
 
 generateButton.addEventListener("click", function () {
@@ -95,20 +96,27 @@ generateButton.addEventListener("click", function () {
 
 
     // generazione random number x carrozza
+    var carNumber = Math.floor(Math.random() * 12) + 1;
+    console.log(carNumber);
 
 
-    // Stamoa in HTML dei dati della sezione "il tuo biglietto"
+    // Stampa in HTML dei dati della sezione "il tuo biglietto"
     namePassegner.innerHTML = nameValue;
     ticketPrice.innerHTML = price;
     rateHtml.innerHTML = rate;
+    car.innerHTML = carNumber;
 
+    // Resetto al click la sezione "Inserisci i tuoi dati di viaggio" 
 
-
-
-
+    /*  namePassegnerElement.value = "";
+     kmsElement.value = "10";
+     ageElement.value = "Over 18"; */
 })
 
-// -----sopra il bottone----------
+// -----chiuso bottone "genera biglietto"----------
+// creo bottone resetta
+
+
 
 
 
