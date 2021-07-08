@@ -23,6 +23,29 @@ Tariffa applicata all'utente (Tariffa minori, Tariffa ordinaria, Tariffa Over65)
 
 /*
 PASSAGGI:
-1- recuperare tutti gli elementi HTML di cui ho bisogno;
-2-
+1- recuperare tutti gli elementi HTML (sia dati passeggero che il tuo biglietto) di cui ho bisogno;
+2- creare il button con stato al click;
+3- definire la logica di funzionamento del programmino;
+3a- calcolare il prezzo * 0.21;
+3b- applicare gli sconti con if/else if;
+3c- Modificare il prezzo finale con max due decimali;
+4- inserire la logica all'interno del button al click;
+5- fare gli innerHTML per i dati del biglietto;
+5a- stampa HTML nome
+5b- stampa HTML rate(tariffa);
+5c- stampa HTML Carrozza;
+5d- stampa codice treno (stringa fissa);
+5e- stampa HTML prezzo del biglietto;
+6- in chiusura del "button click" azzerare valori HTML di dati di viaggio;
+7- aprire click button per reset;
+8- azzerare tutti i dati al click;
+9- rendere invisibile sezione "il tuo biglietto fino a click genera";
+10- ritocca HTML e CSS;
+
+
+
+
+
+
+
 */
