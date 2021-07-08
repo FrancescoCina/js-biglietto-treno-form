@@ -41,11 +41,19 @@ PASSAGGI:
 8- azzerare tutti i dati al click;
 9- rendere invisibile sezione "il tuo biglietto fino a click genera";
 10- ritocca HTML e CSS;
-
-
-
-
-
-
-
 */
+// RECUPERO ELEMENTI HTML
+
+// Sezione inserisci i tuoi dati di viaggio
+var namePassegnerElement = document.getElementById("name-passenger");
+var kmsElement = document.getElementById("kms");
+var ageElement = document.getElementById("passenger-age");
+
+// sezione il tuo biglietto
+var namePassegner = document.getElementById("name");
+var rate = document.getElementById("rate");
+var car = document.getElementById("car");
+var trainCode = document.getElementById("train-code");
+var ticketPrice = document.getElementById("ticket-price");
+
+
