@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="fs-20">
+    <div class="travel-data m-3">
+        <h1>Inserisci i tuoi dati di viaggio:</h1>
+        <div>
+            <label for="name">Nome Passeggero: </label>
+            <input type="text">
+        </div>
+    </div>
+    <div class="kms m-3">
+        <label for="kms">Quanti km devi percorrere?</label>
+        <input type="text">
+    </div>
+    <div class="age m-3">
+        <select id="passegner-age">
+            <option>Minorenne</option>
+            <option selected>Over 18</option>
+            <option>Over 65</option>
+        </select>
+    </div>
+    <div class="buttons m-3">
+        <button>Genera Biglietto</button>
+        <button>Resetta</button>
+    </div>
+    <hr>
+    <div class="your-ticket">
+        <h2>Il tuo biglietto</h2>
+        <p>Nome Passeggero: <span id="name-passenger"></span></p>
+        <p>Offerta: <span id="rate"></span></p>
+        <p>Carrozza: <span id="car"></span></p>
+        <p>Codice Treno: <span id="train-code">94373</span></p>
+        <p>Prezzo del biglietto: <span id="ticket-price"></span></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
