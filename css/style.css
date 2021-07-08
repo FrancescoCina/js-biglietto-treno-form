@@ -4,13 +4,39 @@
     padding: 0;
 }
 
-.m-3{
-    margin: 1rem;
+
+/* COLORS */
+.bg-fucsia{
+    background-color:#b91450;
 }
 
-.fs-20{
-    font-size: 20px;
+.bg-button-grey{
+    background-color: #cccccc;
 }
+
+.bg-darkgrey{
+    background-color: #808080;
+}
+
+/* ---------------- */
+
+/* CLASSE BOTTONI */
+
+.btn-outline-black{
+    color: #000;
+    border-color:#000 ;
+}
+
+/* -------------- */
+
+/* CAMBIO SFONDO E COLORE DEL BOTTONE ALL'ACTIVE */
+#travel-data #buttons button:active{
+    background-color: #b91450;
+    color: #fff;
+}
+
+/* -------------------- */
+
 
 #your-ticket p {
     font-weight: bold;
