@@ -48,12 +48,69 @@ PASSAGGI:
 var namePassegnerElement = document.getElementById("name-passenger");
 var kmsElement = document.getElementById("kms");
 var ageElement = document.getElementById("passenger-age");
+var generateButton = document.getElementById("generate-button");
+var resetButton = document.getElementById("reset-button");
 
 // sezione il tuo biglietto
 var namePassegner = document.getElementById("name");
-var rate = document.getElementById("rate");
+var rateHtml = document.getElementById("rate");
 var car = document.getElementById("car");
 var trainCode = document.getElementById("train-code");
 var ticketPrice = document.getElementById("ticket-price");
+
+
+// Creazione button al click di generazione ticket
+
+generateButton.addEventListener("click", function () {
+    // variabili per valori dei dati inseriti presi dal form;
+
+    var nameValue = namePassegnerElement.value;
+    console.log(nameValue);
+
+    var kmsValue = kmsElement.value;
+    console.log(kmsValue);
+
+    var ageValue = ageElement.value;
+    console.log(ageValue);
+
+    // stabilisco il prezzo
+    var price = kmsValue * 0.21;
+
+    // Stabilisco tariffa ordinaria
+    var rate = "Tariffa Ordinaria";
+
+
+    // logica sconti 
+    if (ageValue === "Minorenne") {
+        price *= 0.8;
+        rate = "Tariffa per minorenni";
+    } else if (ageValue === "Over 65") {
+        price *= 0.6;
+        rate = "Tariffa per Over65"
+    }
+
+    // approssimazione prezzo
+    price = price.toFixed(2);
+    console.log("Il prezzo del biglietto del treno è: ", price);
+
+
+    // generazione random number x carrozza
+
+
+    // Stamoa in HTML dei dati della sezione "il tuo biglietto"
+    namePassegner.innerHTML = nameValue;
+    ticketPrice.innerHTML = price;
+    rateHtml.innerHTML = rate;
+
+
+
+
+
+})
+
+// -----sopra il bottone----------
+
+
+
 
 
