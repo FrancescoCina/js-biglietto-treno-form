@@ -85,10 +85,10 @@ generateButton.addEventListener("click", function () {
 
 
     // logica sconti 
-    if (ageValue === "Minorenne") {
+    if (ageValue === "min") {
         price *= 0.8;
         rate = "Tariffa per minorenni";
-    } else if (ageValue === "Over 65") {
+    } else if (ageValue === "over65") {
         price *= 0.6;
         rate = "Tariffa per Over65"
     }
@@ -102,12 +102,18 @@ generateButton.addEventListener("click", function () {
     var carNumber = Math.floor(Math.random() * 12) + 1;
     console.log(carNumber);
 
+    // generazione numero random per codice biglietto
+
+    var trainCodeNumber = Math.floor(Math.random() * 90000) + 10000;
+    console.log("Codice treno", trainCodeNumber);
+
 
     // Stampa in HTML dei dati della sezione "il tuo biglietto"
     namePassegner.innerHTML = nameValue;
     ticketPrice.innerHTML = price;
     rateHtml.innerHTML = rate;
     car.innerHTML = carNumber;
+    trainCode.innerHTML = trainCodeNumber;
 
     // rendo invisibile sezione il tuo biglietto
 
@@ -130,8 +136,6 @@ resetButton.addEventListener("click", function () {
     yourSection.classList.add("hidden");
 
 })
-
-
 
 
 

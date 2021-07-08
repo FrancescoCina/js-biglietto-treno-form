@@ -14,7 +14,7 @@
 <body class="fs-3 bg-fucsia">
     <div class="container">
         <h1 class="text-uppercase text-center text-white pt-4">Calcola il prezzo del tuo biglietto</h1>
-        <section id="travel-data" class="mt-4 bg-white rounded-3 py-3 text-center">
+        <section id="travel-data" class="mt-4 bg-white rounded-3 py-3 text-center shadow-sm">
             <h2>Inserisci i tuoi dati di viaggio:</h2>
             <div class="row gy-3">
                 <div class="col-12 col-md-6 col-lg-4">
@@ -23,16 +23,16 @@
                         <input type="text" id="name-passenger">
                     </div>
                 </div>
-                <div id="kms" class="col-12 col-md-6 col-lg-4">
+                <div id="kms-request" class="col-12 col-md-6 col-lg-4">
                     <label for="kms">Quanti km devi percorrere?</label>
-                    <input type="text" id="kms" value="10">
+                    <input type="number" id="kms">
                 </div>
                 <div id="age" class="col-12 col-lg-4">
                     <label for="passenger-age">In che fascia d'età sei?</label>
                     <select id="passenger-age" class="form-select form-select-lg mb-3">
-                        <option>Minorenne</option>
-                        <option selected>Over 18</option>
-                        <option>Over 65</option>
+                        <option value="min">Minorenne</option>
+                        <option value="over18" selected>Over 18</option>
+                        <option value="over65">Over 65</option>
                     </select>
                 </div>
             </div>
@@ -43,17 +43,30 @@
                 </div>
             </div>
         </section>
-        <hr>
-        <section id="your-ticket" class="hidden">
-            <h2>Il tuo biglietto</h2>
-            <p>Nome Passeggero: <span id="name"></span></p>
-            <p>Offerta: <span id="rate"></span></p>
-            <p>Carrozza: <span id="car"></span></p>
-            <p>Codice Treno: <span id="train-code">94373</span></p>
-            <p>Prezzo del biglietto: <span id="ticket-price"></span></p>
+        <section id="your-ticket" class="hidden rounded-3 py-3 shadow-sm">
+            <h1 class="text-uppercase text-center text-white pt-4">Il tuo biglietto</h1>
+            <div class="ticket-informations bg-white p-3">
+                <h3 class="text-uppercase">Dettaglio passeggeri</h3>
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p>Nome Passeggero: <span id="name" class="badge bg-fucsia"></span></p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <p>Offerta: <span id="rate" class="badge bg-fucsia"></span></p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <p>Carrozza: <span id="car" class="badge bg-fucsia"></span></p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <p>Codice Treno: <span id="train-code" class="badge bg-fucsia"></span></p>
+                    </div>
+                    <div class="col-12">
+                        <p>Prezzo del biglietto: <span id="ticket-price" class="badge bg-fucsia"></span></p>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
-
     <script src="js/script.js"></script>
 </body>
 
