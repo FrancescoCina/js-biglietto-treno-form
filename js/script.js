@@ -51,6 +51,9 @@ var ageElement = document.getElementById("passenger-age");
 var generateButton = document.getElementById("generate-button");
 var resetButton = document.getElementById("reset-button");
 
+// RECUPERO ELEMENTO HTML DELL'ALERT
+var alertError = document.getElementById("alert");
+
 // sezione il tuo biglietto
 
 var yourSection = document.getElementById("your-ticket");
@@ -77,49 +80,55 @@ generateButton.addEventListener("click", function () {
     var ageValue = ageElement.value;
     console.log(ageValue);
 
-    // stabilisco il prezzo
-    var price = kmsValue * 0.21;
+    if (!nameValue || nameValue.trim() === "" || kmsValue < 10) {
+        alertError.classList.remove("d-none");
+    } else {
 
-    // Stabilisco tariffa ordinaria
-    var rate = "Tariffa Ordinaria";
+        // stabilisco il prezzo
+        var price = kmsValue * 0.21;
+
+        // Stabilisco tariffa ordinaria
+        var rate = "Tariffa Ordinaria";
 
 
-    // logica sconti 
-    if (ageValue === "min") {
-        price *= 0.8;
-        rate = "Tariffa per minorenni";
-    } else if (ageValue === "over65") {
-        price *= 0.6;
-        rate = "Tariffa per Over65"
+        // logica sconti 
+        if (ageValue === "min") {
+            price *= 0.8;
+            rate = "Tariffa per minorenni";
+        } else if (ageValue === "over65") {
+            price *= 0.6;
+            rate = "Tariffa per Over65"
+        }
+
+        // approssimazione prezzo
+        price = price.toFixed(2);
+        console.log("Il prezzo del biglietto del treno è: ", price);
+
+
+        // generazione random number x carrozza
+        var carNumber = Math.floor(Math.random() * 12) + 1;
+        console.log(carNumber);
+
+        // generazione numero random per codice biglietto
+
+        var trainCodeNumber = Math.floor(Math.random() * 90000) + 10000;
+        console.log("Codice treno", trainCodeNumber);
+
+
+        // Stampa in HTML dei dati della sezione "il tuo biglietto"
+        namePassegner.innerHTML = nameValue;
+        ticketPrice.innerHTML = price;
+        rateHtml.innerHTML = rate;
+        car.innerHTML = carNumber;
+        trainCode.innerHTML = trainCodeNumber;
+
+        // rendo visibile sezione il tuo biglietto
+
+
+        yourSection.classList.remove("hidden");
+        yourSection.classList.add("visible");
+
     }
-
-    // approssimazione prezzo
-    price = price.toFixed(2);
-    console.log("Il prezzo del biglietto del treno è: ", price);
-
-
-    // generazione random number x carrozza
-    var carNumber = Math.floor(Math.random() * 12) + 1;
-    console.log(carNumber);
-
-    // generazione numero random per codice biglietto
-
-    var trainCodeNumber = Math.floor(Math.random() * 90000) + 10000;
-    console.log("Codice treno", trainCodeNumber);
-
-
-    // Stampa in HTML dei dati della sezione "il tuo biglietto"
-    namePassegner.innerHTML = nameValue;
-    ticketPrice.innerHTML = price;
-    rateHtml.innerHTML = rate;
-    car.innerHTML = carNumber;
-    trainCode.innerHTML = trainCodeNumber;
-
-    // rendo invisibile sezione il tuo biglietto
-
-
-    yourSection.classList.remove("hidden");
-    yourSection.classList.add("visible");
 
 })
 
@@ -130,10 +139,12 @@ resetButton.addEventListener("click", function () {
 
     namePassegnerElement.value = "";
     kmsElement.value = "10";
-    ageElement.value = "Over 18";
+    ageElement.value = "over18";
 
     yourSection.classList.remove("visible");
     yourSection.classList.add("hidden");
+
+    alertError.classList.add("d-none");
 
 })
 

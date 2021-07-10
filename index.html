@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ticket Train Generate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -16,16 +16,19 @@
         <h1 class="text-uppercase text-center text-white pt-4">Calcola il prezzo del tuo biglietto</h1>
         <section id="travel-data" class="mt-4 bg-white rounded-3 py-3 text-center shadow-sm">
             <h2>Inserisci i tuoi dati di viaggio:</h2>
+            <div id="alert" class="alert alert-success mx-5 d-none" role="alert">
+                Alcuni dei dati inseriti non sono validi!!
+            </div>
             <div class="row gy-3">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div>
                         <label for="name">Nome Passeggero: </label>
-                        <input type="text" id="name-passenger">
+                        <input type="text" id="name-passenger" placeholder="Inserisci il tuo nome">
                     </div>
                 </div>
                 <div id="kms-request" class="col-12 col-md-6 col-lg-4">
-                    <label for="kms">Quanti km devi percorrere?</label>
-                    <input type="number" id="kms">
+                    <label for="kms">Quanti km vuoi percorrere?</label>
+                    <input type="number" id="kms" min="10" value="10">
                 </div>
                 <div id="age" class="col-12 col-lg-4">
                     <label for="passenger-age">In che fascia d'età sei?</label>
